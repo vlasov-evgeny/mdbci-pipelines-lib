@@ -1,3 +1,6 @@
+import groovy.json.JsonOutput
+import hudson.FilePath
+
 @NonCPS def entrySet(m) {m.collect {k, v -> [key: k, value: v]}}
 
 @NonCPS
