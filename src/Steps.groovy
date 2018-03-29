@@ -1,4 +1,4 @@
-def checkBoxes(mdbciPath) {
+def checkBoxes(mdbciPath, boxes) {
     def helpers = new Helpers()
     def mdbci = new Mdbci()
 
