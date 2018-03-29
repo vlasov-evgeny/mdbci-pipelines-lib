@@ -9,4 +9,11 @@ def createJSON(filename, array) {
     writeFile file: filename, text: json
 }
 
+@NonCPS
+def printHashArrayAsJSON(array) {
+    def json = JsonOutput.toJson(array)
+    json = JsonOutput.prettyPrint(json)
+    echo json
+}
+
 return this
