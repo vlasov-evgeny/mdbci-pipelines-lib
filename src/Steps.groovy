@@ -22,18 +22,15 @@ def checkBoxes(mdbciPath, boxes) {
             "${mdbciPath}/vms/${box.key}.json",
             "${mdbciPath}/vms/${box.key}"
         )
-        // def status = mdbci.up(mdbciPath, "${mdbciPath}/vms/${box.key}")
+        def status = mdbci.up(mdbciPath, "${mdbciPath}/vms/${box.key}")
         
-        // if (status == 0) {
-        //     logInfo("${box.key} can be broght up")
-        //     boxesResults[box.key] = "success"
-        // } else {
-        //     logError("${box.key} can't be broght up")
-        //     boxesResults[box.key] = "error"
-        // }
+        if (status == 0) {            
+            boxesResults[box.key] = "success"
+        } else {
+            boxesResults[box.key] = "error"
+        }
         
-        // mdbci.destroy(mdbciPath, "${mdbciPath}/vms/${box.key}")
-        boxesResults[box.key] = "success"
+        mdbci.destroy(mdbciPath, "${mdbciPath}/vms/${box.key}")
     }
 
     return boxesResults
