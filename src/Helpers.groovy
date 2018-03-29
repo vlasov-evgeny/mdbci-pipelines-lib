@@ -9,12 +9,4 @@ def createJSON(filename, array) {
     writeFile file: filename, text: json
 }
 
-def logError(message) {
-    echo "ERROR: ${message}"    
-}
-
-def logInfo(message) {
-    echo "INFO: ${message}"    
-}
-
 return this
